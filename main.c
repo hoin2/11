@@ -5,20 +5,15 @@
 
 
 int main(void) {
-	char*pc;
-	int*pi;
-	double*pd;
+	int i=100;
+	int *p=&i;
+	int **q=&p;
 	
-	pc=(char*)10000;
-	pi=(int*)10000;
-	pd=(double*)10000;
+	*p=200;
+	printf("i=%d,*p=%d,**q=%d\n",i,*p,**q);
 	
-	printf("증가 전:pc=%d,pi=%d,pd=%d\n",pc,pi,pd);
-	
-	pc++;
-	pi++;
-	pd++;
-	printf("증가 후:pc=%d,pi=%d,pd=%d\n",pc,pi,pd);
+	**q=300;
+	printf("i=%d,*p=%d,**q=%d\n",i,*p,**q);
 	
 	return 0;
 }
